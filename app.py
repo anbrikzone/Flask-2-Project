@@ -1,7 +1,10 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, conte, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("")
+    context = {
+        "title": "List of Employees",
+    }
+    return render_template("employees.html", context=context)
