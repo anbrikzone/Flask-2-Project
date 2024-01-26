@@ -1,4 +1,27 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>test</h1>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Salary</th>
+            <th scope="col" class="fixed-column text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for employee in context["ees"] %}
+            <tr>
+            <th scope="row">{{employee[0]}}</th>
+            <td>{{employee[1]}}</td>
+            <td>{{employee[2]}}</td>
+            <td>{{employee[3]}}</td>
+            <td>{{employee[4]}}</td>
+            <td class="fixed-column text-center"><a href="{{ url_for('action') }}" class="btn btn-primary btn-sm">Update</a> | <a href="" class="btn btn-danger btn-sm">Remove</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 {% endblock %}
