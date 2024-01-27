@@ -41,18 +41,21 @@ def remove(user_id):
 @app.route("/action", methods=['GET', 'POST'])
 def action():
     if request.method == 'POST':
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        department = request.form['department']
-        salary = request.form['salary']
+        first_name = request.form.get(['first_name'], None)
+        last_name = request.form.get(['last_name'], None)
+        department = request.form.get(['department'], None)
+        salary = request.form.get(['salary'], None)
         try:
-            user_id = request.form['user_id']
+            user_id = request.form.get(['user_id'], None)
             if user_id != None:
                 Employees().update_employee(user_id, first_name, last_name, department, salary)
                 return redirect(url_for("index"))
                 
         except:
-            Employees().create_employee(first_name=first_name, last_name=last_name, department=department, salary=salary)
-            return redirect(url_for("index"))
+            if first_name != None or last_name !=None or salary != None
+                Employees().create_employee(first_name=first_name, last_name=last_name, department=department, salary=salary)
+                return redirect(url_for("index"))
+            else:
+                return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))

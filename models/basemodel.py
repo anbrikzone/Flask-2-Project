@@ -17,7 +17,6 @@ class BaseModel():
                 salary REAL
             )
             '''
-        
         self.cursor.execute(sql)
         self.connection.commit()
 
