@@ -52,7 +52,7 @@ def action():
                 return redirect(url_for("index"))
                 
         except:
-            if first_name != None or last_name !=None or salary != None
+            if first_name != None or last_name !=None or salary != None:
                 Employees().create_employee(first_name=first_name, last_name=last_name, department=department, salary=salary)
                 return redirect(url_for("index"))
             else:
