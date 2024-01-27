@@ -24,6 +24,14 @@ class Employees(BaseModel):
             print('SQLite error: %s' % (' '.join(er.args)))
             return 0
     
+    def remove(self, id):
+        try:
+            self.cursor.execute(f"DELETE FROM {self.table} WHERE id = {id}")
+            self.connection.commit()
+        except sqlite3.Error as er:
+            print('SQLite error: %s' % (' '.join(er.args)))
+            return 0
+    
     def get_all_employees(self):
         try:
             result = self.cursor.execute(f"SELECT * FROM {self.table}").fetchall()

@@ -34,15 +34,9 @@ def update(user_id):
 
 @app.route("/remove/<int:user_id>")
 def remove(user_id):
+    Employees().remove(user_id)
     flash("The employee has been removed!")
     return redirect(url_for("index"))
-    # employees = Employees()
-    # ees = employees.get_all_employees()
-    # context = {
-    #     "title": "Employees",
-    #     "ees": ees,
-    # }
-    # return render_template("employees.html", context=context)
 
 @app.route("/action", methods=['GET', 'POST'])
 def action():
