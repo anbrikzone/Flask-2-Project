@@ -11,4 +11,5 @@ This app show the list of employees and allow to add new, update and remove empl
 *(main view)*
 
 ![image](https://github.com/anbrikzone/Flask-1/assets/2174324/4c1cd9ee-6a17-4c2e-a44d-1c53a1c364e3)
+
 *(add/update form)*
