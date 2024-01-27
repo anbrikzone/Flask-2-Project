@@ -4,5 +4,5 @@
 This app show the list of employees and allow to add new, update and remove employees
 
 ## Frameworks
-Flask
-Bootstrap
+1. Flask
+2. Bootstrap
