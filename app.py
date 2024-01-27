@@ -25,6 +25,8 @@ def add():
 @app.route("/form/<int:user_id>")
 def update(user_id):
     user_id, first_name, last_name, department, salary = Employees().get_employee_by_id(user_id)
+    if str(salary).split(".")[1] == "0":
+        salary = int(salary)
     context = {
         "title": "Employees",
         "employees": {"user_id": user_id, "first_name": first_name, "last_name": last_name, "department": department, "salary": salary},
