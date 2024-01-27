@@ -32,3 +32,12 @@ class Employees(BaseModel):
         except sqlite3.Error as er:
             print('SQLite error: %s' % (' '.join(er.args)))
             return 0
+        
+    def get_employee_by_id(self, user_id):
+        try:
+            result = self.cursor.execute(f"SELECT * FROM {self.table} WHERE id = {user_id}").fetchone()
+            self.connection.commit()
+            return result
+        except sqlite3.Error as er:
+            print('SQLite error: %s' % (' '.join(er.args)))
+            return 0

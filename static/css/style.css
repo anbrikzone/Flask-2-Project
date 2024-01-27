@@ -1,15 +1,14 @@
 body {
     padding-top: 5rem;
   }
-  .starter-template {
+.starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
   }
-
 .fixed-column {
     width: 200px;
 }
 
-.text-center {
+/* .text-center {
     text-align: center;
-}
+} */
