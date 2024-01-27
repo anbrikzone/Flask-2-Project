@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block body %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in get_flashed_messages() %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('add') }}" class="btn btn-primary my-2">Add new Employee</a>
     <table class="table table-bordered table-hover">
         <thead class="thead-dark">
           <tr>
@@ -19,7 +30,7 @@
             <td>{{employee[2]}}</td>
             <td>{{employee[3]}}</td>
             <td>{{employee[4]}}</td>
-            <td class="fixed-column text-center"><a href="{{ url_for('action') }}" class="btn btn-primary btn-sm">Update</a> | <a href="" class="btn btn-danger btn-sm">Remove</a></td>
+            <td class="fixed-column text-center"><a href="{{ url_for('update', user_id=employee[0]) }}" class="btn btn-success btn-sm">Update</a><div class="vr mx-2" style="height: 10px;"></div><a href="{{ url_for('remove', user_id=employee[0]) }}" class="btn btn-danger btn-sm">Remove</a></td>
           </tr>
           {% endfor %}
         </tbody>

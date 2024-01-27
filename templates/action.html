@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block body %}
-
-<form class="action-form">
+<a href="{{ url_for('index') }}" class="btn btn-primary my-2">Go Back</a>
+<form class="action-form" action="{{ url_for('action') }}" method="post">
+    {% if context['user_id'] > 0 %}
+      <input type="hidden" value="{{context['user_id']}}" class="form-control" id="user_id" name="user_id">
+    {% endif %}
     <div class="form-group">
       <label for="first_name" class="my-2">First name:</label>
-      <input type="text" class="form-control" id="first_name">
+      <input type="text" class="form-control" id="first_name" name="first_name">
     </div>
     <div class="form-group">
         <label for="last_name" class="my-2">Last name:</label>
-        <input type="text" class="form-control" id="last_name">
+        <input type="text" class="form-control" id="last_name" name="last_name">
     </div>
     <div class="form-group">
         <label for="department" class="my-2">Department:</label>
-        <select class="form-select" aria-label="Default select example" id="department">
+        <select class="form-select" aria-label="Default select example" id="department" name="department">
             <option selected>Select department</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -26,13 +29,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="salary">
             <div class="input-group-append">
               <span class="input-group-text">.00</span>
             </div>
           </div>
     </div>
-    <div class=""><button type="submit" class="btn btn-primary my-2">Send</button></div>
+    <div class=""><button type="submit" class="btn btn-success my-2">{{context['button_name']}}</button></div>
   </form>
 
 {% endblock %}
