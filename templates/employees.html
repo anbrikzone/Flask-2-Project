@@ -25,12 +25,12 @@
         <tbody>
           {% for employee in context["employees"] %}
             <tr>
-            <td>{{employee[0]}}</td>
-            <td>{{employee[1]}}</td>
-            <td>{{employee[2]}}</td>
-            <td>{{employee[3]}}</td>
-            <td>{{employee[4]}}</td>
-            <td class="fixed-column text-center"><a href="{{ url_for('update', user_id=employee[0]) }}" class="btn btn-success btn-sm">Update</a><div class="vr mx-2 align-middle" style="height: 10px;"></div><a href="{{ url_for('remove', user_id=employee[0]) }}" class="btn btn-danger btn-sm">Remove</a></td>
+              <td class="text-center">{{employee[0]}}</td>
+              <td>{{employee[1]}}</td>
+              <td>{{employee[2]}}</td>
+              <td>{{employee[3]}}</td>
+              <td>{{employee[4]}}</td>
+              <td class="fixed-column text-center"><a href="{{ url_for('update', user_id=employee[0]) }}" class="btn btn-success btn-sm">Update</a><div class="vr mx-2 align-middle" style="height: 10px;"></div><a href="{{ url_for('remove', user_id=employee[0]) }}" class="btn btn-danger btn-sm">Remove</a></td>
           </tr>
           {% endfor %}
         </tbody>
