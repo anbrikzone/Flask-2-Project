@@ -7,6 +7,7 @@ class BaseModel():
         self.cursor = self.connection.cursor()
         self.create_table_users()
         self.create_table_tasks()
+        self.create_table_weather()
 
     def create_table_users(self):
         sql = '''
@@ -32,7 +33,20 @@ class BaseModel():
         );
             '''
         self.cursor.execute(sql)
-        self.connection.commit()       
+        self.connection.commit()     
+
+
+    def create_table_weather(self):
+        sql = '''
+            CREATE TABLE IF NOT EXISTS weather (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+            location    TEXT,
+            json        TEXT,
+            date_update INTEGER
+        );
+            ''' 
+        self.cursor.execute(sql)
+        self.connection.commit() 
            
             
     
