@@ -1,4 +1,16 @@
 {% extends "base.html" %}
+{% block weather %}
+  <div class="card mx-5" style="width: 18rem;">
+    <div class="card-header">
+      Weather
+    </div>
+    <div class="card-body mx-10">
+      <h5 class="card-title">Atyrau</h5>
+      <p class="card-text">Temperature: {{context["weather"]}} &#8451;</p>
+    </div>
+  </div>
+{% endblock %}
+
 {% block body %}
     <div class="container">
       <div class="row">

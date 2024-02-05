@@ -19,34 +19,10 @@
     </style>
   </head>
   <body class="bg-primary">
-    <nav class="navbar navbar-expand-sm navbar-primary">
-      <div class="container-fluid">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Home</a>
-          </li>
-        </ul>
-        <span class="navbar-text mx-2 text-white">Hello, User</span>
-        <a class="navbar-text text-white" href="">Log-in</a>
-      </div>  
-    </nav>
-    
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col"> -->
-          <div class="card mx-5" style="width: 18rem;">
-            <div class="card-header">
-              Weather
-            </div>
-            <div class="card-body mx-10">
-              <h5 class="card-title">Atyrau</h5>
-              <p class="card-text">Temperature: {{context["weather"]}} &#8451;</p>
-            </div>
-          </div>
-        <!-- </div>
-      </div>
-    </div> -->
-
+    {% if context['user'] !=0 %}
+      {% include 'navigation.html' %}
+    {% endif %}
+    {% block weather %}{% endblock %}
     <div class="container">
     {% block body %}{% endblock %}
     </div>
