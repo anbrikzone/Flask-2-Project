@@ -1,7 +1,8 @@
 import sqlite3
 from models.basemodel import BaseModel
+from flask_login import UserMixin
 
-class Users(BaseModel):
+class Users(UserMixin, BaseModel):
 
     def __init__(self) -> None:
         super().__init__()

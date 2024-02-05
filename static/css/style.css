@@ -17,3 +17,6 @@ hr {
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   font-weight: bold;
 }
+.btn {
+  width: 200px
+}
