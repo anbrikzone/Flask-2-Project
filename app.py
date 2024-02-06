@@ -20,11 +20,15 @@ def index():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    context = {
-        "title": "To-Do List",
-        "user": 0
-    }
-    return render_template("login.html", context=context)
+    if request.method == "GET":
+        context = {
+            "title": "To-Do List",
+            "user": 0
+        }
+        return render_template("login.html", context=context)
+    elif request.method == "POST":
+        
+        return render_template("login.html", context=context)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

@@ -1,7 +1,10 @@
-# Flask Project 1. Employees Application
+# Flask Project 2. To-Do List
 
 ## About
-This app show the list of employees and allow to add new, update and remove employees
+To-Do list app with waether widget.
+You can add, delete tasks and mark them as done.
+The app has login & registration forms.
+
 
 ## Frameworks
 1. Flask
