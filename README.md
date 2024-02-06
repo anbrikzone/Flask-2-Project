@@ -10,9 +10,11 @@ The app has login & registration forms.
 1. Flask
 2. Bootstrap
 
-![image](https://github.com/anbrikzone/Flask-1/assets/2174324/8e455b73-c6c6-4b19-86be-5441bdd21d63)
+![image](https://github.com/anbrikzone/Flask-2-Project/assets/2174324/3e0a18ca-12e0-4609-8e48-c74f776cbb00)
 *(main view)*
 
-![image](https://github.com/anbrikzone/Flask-1/assets/2174324/4c1cd9ee-6a17-4c2e-a44d-1c53a1c364e3)
+![image](https://github.com/anbrikzone/Flask-2-Project/assets/2174324/009decc8-557c-43a2-9380-ffe641631621)
+*(index page)*
 
-*(add/update form)*
+![image](https://github.com/anbrikzone/Flask-2-Project/assets/2174324/17febdc9-b6ce-40e7-8931-b1106219004f)
+*(login page)*
