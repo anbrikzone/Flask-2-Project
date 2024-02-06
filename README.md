@@ -14,7 +14,9 @@ The app has login & registration forms.
 *(main view)*
 
 ![image](https://github.com/anbrikzone/Flask-2-Project/assets/2174324/009decc8-557c-43a2-9380-ffe641631621)
+
 *(index page)*
 
 ![image](https://github.com/anbrikzone/Flask-2-Project/assets/2174324/17febdc9-b6ce-40e7-8931-b1106219004f)
+
 *(login page)*
