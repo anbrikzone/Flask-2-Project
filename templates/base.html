@@ -19,9 +19,7 @@
     </style>
   </head>
   <body class="bg-primary">
-    {% if context['user'] !=0 %}
-      {% include 'navigation.html' %}
-    {% endif %}
+    {% include 'navigation.html' %}
     {% block weather %}{% endblock %}
     <div class="container">
     {% block body %}{% endblock %}

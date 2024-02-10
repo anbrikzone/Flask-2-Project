@@ -1,54 +1,38 @@
-import sqlite3
+from flask_login import UserMixin
+from flask_sqlalchemy import SQLAlchemy
 
-class BaseModel():
+db = SQLAlchemy()
 
-    def __init__(self) -> None:
-        self.connection = sqlite3.connect(database="database/db.sqlite")
-        self.cursor = self.connection.cursor()
-        self.create_table_users()
-        self.create_table_tasks()
-        self.create_table_weather()
+class User(UserMixin, db.Model):
 
-    def create_table_users(self):
-        sql = '''
-            CREATE TABLE IF NOT EXISTS users (
-            id       INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-            username TEXT,
-            password TEXT,
-            email    TEXT
-        );
-            '''
-        self.cursor.execute(sql)
-        self.connection.commit()
+    __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String,  nullable=False)
+    password = db.Column(db.String,  nullable=False)
+    email = db.Column(db.String,  nullable=True)
+    tasks = db.relationship("Task", backref="users")
 
-           
-    def create_table_tasks(self):
-        sql = '''
-            CREATE TABLE IF NOT EXISTS tasks (
-            id      INTEGER     PRIMARY KEY AUTOINCREMENT UNIQUE,
-            title   TEXT,
-            status  INTEGER (1),
-            user_id INTEGER     REFERENCES users (id)   ON DELETE CASCADE
-                                                        ON UPDATE CASCADE
-        );
-            '''
-        self.cursor.execute(sql)
-        self.connection.commit()     
-
-
-    def create_table_weather(self):
-        sql = '''
-            CREATE TABLE IF NOT EXISTS weather (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-            location    TEXT,
-            json        TEXT,
-            date_update INTEGER
-        );
-            ''' 
-        self.cursor.execute(sql)
-        self.connection.commit() 
-           
-            
+    def __repr__(self):
+        return f'<User {self.__tablename__}>'
     
+class Task(db.Model):
+    
+    __tablename__ = "tasks"
+    id = db.Column(db.Integer, primary_key = True)
+    title  = db.Column(db.String, nullable = False)
+    status = db.Column(db.Integer, default = 0)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-        
+    def __repr__(self):
+        return f'<Task {self.__tablename__}>'
+    
+class Weather(db.Model):
+    
+    __tablename__ = "weather"
+    id = db.Column(db.Integer, primary_key = True)
+    location  = db.Column(db.String, nullable = False)
+    json  = db.Column(db.String, nullable = False)
+    date_update = db.Column(db.String)
+
+    def __repr__(self):
+        return f'<Weather {self.location}>'
