@@ -14,22 +14,22 @@ This project is a To-Do list application that comes with a weather widget. The a
 
 Follow these steps to install and run the application:
 1. Ensure that Python and pip are installed on your system.
-```bash
+```cmd
 python --version
 pip --version
 ```
 2. Navigate to the directory containing the requirements.txt file:
-```console
+```cmd
 cd /path/to/your/project
 ```
 
 3. Install the required packages:
-```console
+```cmd
 pip install -r requirements.txt
 ```
 
 Run the Flask app:
-```console
+```cmd
 flask --app app run --debug  
 ```
 
