@@ -4,7 +4,7 @@
 This project is a To-Do list application that comes with a weather widget. The application allows you to add and delete tasks, as well as mark them as done. It also includes login and registration forms.
 
 ### Features
-- Uses RapidAPI to determine the weather. The city is determined based on the user's IP address.
+- Uses RapidAPI to determine the weather. The city is determined based on the user's IP address (also RapidAPI).
 
 ## Frameworks Used
 1. Flask: This project uses Flask as the main framework. It also utilizes Flask-Login for handling user sessions and Flask-SQLAlchemy for database interactions.
