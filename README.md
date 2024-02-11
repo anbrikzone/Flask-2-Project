@@ -19,17 +19,17 @@ python --version
 pip --version
 ```
 2. Navigate to the directory containing the requirements.txt file:
-```cmd
+```console
 cd /path/to/your/project
 ```
 
 3. Install the required packages:
-```
+```console
 pip install -r requirements.txt
 ```
 
 Run the Flask app:
-```
+```console
 flask --app app run --debug  
 ```
 
