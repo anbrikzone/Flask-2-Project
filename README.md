@@ -1,17 +1,14 @@
-# Flask Project 2. To-Do List
+# Flask Project 2: To-Do List
 
 ## About
-To-Do list app with waether widget.
-You can add, delete tasks and mark them as done.
-The app has login & registration forms.
+This project is a To-Do list application that comes with a weather widget. The application allows you to add and delete tasks, as well as mark them as done. It also includes login and registration forms.
 
-Features:
-* using rapidapi to define weather
+### Features
+- Uses RapidAPI to determine the weather. The city is determined based on the user's IP address.
 
-
-## Frameworks
-1. Flask (also Flask-Login, Flask-SQLAlchemy)
-2. Bootstrap
+## Frameworks Used
+1. Flask: This project uses Flask as the main framework. It also utilizes Flask-Login for handling user sessions and Flask-SQLAlchemy for database interactions.
+2. Bootstrap: This project uses Bootstrap for responsive design and easy UI development.
 
 ## Screenshots
 <img src="https://github.com/anbrikzone/Flask-2-Project/assets/2174324/3e0a18ca-12e0-4609-8e48-c74f776cbb00" width="500">
