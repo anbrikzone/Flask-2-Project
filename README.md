@@ -28,6 +28,11 @@ cd /path/to/your/project
 pip install -r requirements.txt
 ```
 
+Run the Flask app:
+```
+flask --app app run --debug  
+```
+
 ## Screenshots
 <img src="https://github.com/anbrikzone/Flask-2-Project/assets/2174324/3e0a18ca-12e0-4609-8e48-c74f776cbb00" width="500">
 
