@@ -10,6 +10,24 @@ This project is a To-Do list application that comes with a weather widget. The a
 1. Flask: This project uses Flask as the main framework. It also utilizes Flask-Login for handling user sessions and Flask-SQLAlchemy for database interactions.
 2. Bootstrap: This project uses Bootstrap for responsive design and easy UI development.
 
+## Installation and Run
+
+Follow these steps to install and run the application:
+1. Ensure that Python and pip are installed on your system.
+```bash
+python --version
+pip --version
+```
+2. Navigate to the directory containing the requirements.txt file:
+```cmd
+cd /path/to/your/project
+```
+
+3. Install the required packages:
+```
+pip install -r requirements.txt
+```
+
 ## Screenshots
 <img src="https://github.com/anbrikzone/Flask-2-Project/assets/2174324/3e0a18ca-12e0-4609-8e48-c74f776cbb00" width="500">
 
