@@ -13,7 +13,7 @@ class User(UserMixin, db.Model):
     tasks = db.relationship("Task", backref="users")
 
     def __repr__(self):
-        return f'<User {self.__tablename__}>'
+        return f'<User {self.username}>'
     
 class Task(db.Model):
     
@@ -24,7 +24,7 @@ class Task(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     def __repr__(self):
-        return f'<Task {self.__tablename__}>'
+        return f'<Task {self.title}>'
     
 class Weather(db.Model):
     

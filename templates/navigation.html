@@ -2,14 +2,14 @@
     <div class="container-fluid">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" href="/">Home</a>
+          <a class="nav-link text-white" href="{% if context['user'] != '' %}/tasks{% else %}/{% endif %}">Home</a>
         </li>
       </ul>
       {% if context['user'] != "" %}
-      <span class="navbar-text mx-2 text-white">
+      <span class="navbar-text mx-5 text-white">
         Hello, <b>{{context['user']}}</b>
       </span>
-      <a class="navbar-text text-white" href="/logout">Log-out</a>
+      <a class="btn btn-light" href="/logout">LogOut</a>
       {% endif %}
     </div>  
   </nav>

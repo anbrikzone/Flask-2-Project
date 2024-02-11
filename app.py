@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, flash
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_sqlalchemy import session
 from models.basemodel import User, Task, Weather, db
 from services.weatherapi import WeatherAPI
 from services.geolocationapi import LocationAPI
@@ -9,12 +8,10 @@ from datetime import datetime, timedelta
 import json
 import os
 
-
-
 app = Flask(__name__)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SECRET_KEY"] = "123456"
+app.config["SECRET_KEY"] = "e694f80ee6729b0d521d064384da7ecd"
 app.config['SQLALCHEMY_DATABASE_URI'] =\
         'sqlite:///' + os.path.join(basedir + '/database', 'db.sqlite')
 
@@ -60,7 +57,8 @@ def login():
 def register():
     if request.method == "GET":
         context = {
-            "title": "To-Do List"
+            "title": "To-Do List",
+            "user": ""
         }
         return render_template("register.html", context=context)
     elif request.method == "POST":
