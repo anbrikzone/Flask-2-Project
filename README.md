@@ -4,6 +4,7 @@
 To-Do list app with waether widget.
 You can add, delete tasks and mark them as done.
 The app has login & registration forms.
+
 Features:
 * using rapidapi to define weather
 
